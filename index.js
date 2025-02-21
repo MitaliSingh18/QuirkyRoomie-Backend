@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-  origin: "https://quirky-roomie-front.vercel.app", // Allow frontend URL
+  origin: "http://localhost:5173", // Allow frontend URL
   credentials: true, // Allow cookies/auth headers
 }));
 
@@ -26,6 +26,7 @@ mongoose
   .catch(err => console.error(err));
 
 // Routes
+//console.log(process.env.MONGO_URI)
 app.use("/api/auth", authRoutes);
 app.use("/api/complaints", complaintRoutes);
 
